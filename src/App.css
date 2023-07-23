@@ -1,38 +1,152 @@
+body {
+  background: linear-gradient(60deg, #F3F3F3 0%, #E8C7FA 100%);
+  font-family: Poppins;
+
+}
+
+.title {
+  color: #A459D1;
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.gen-main{
+  display: flex;
+  justify-content: center;
+}
+
+.generator {
+  display: flex;
+  flex-wrap: wrap;
+  width: fit-content;
+  gap: 35px;
+  height: fit-content;
+  padding: 66px 66px 66px 35px;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-shrink: 0;
+  border-radius: 50px;
+  background: linear-gradient(60deg, #F3F3F3 0%, #E8C7FA 100%);
+  mix-blend-mode: multiply;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.App-link {
-  color: #61dafb;
+.generatingValue {
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px;
+  flex-direction: column;
+  /* padding: 154px 44px 154px 45px; */
+  height: fit-content;
+  justify-content: center;
+  align-items: center;
+  /* border: 2px solid black; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.display {
+  width: 400px;
+  height: 400px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  background: #D9D9D9;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.field {
+  border-radius: 15px;
+  padding: 0.4em;
+  border: none;
+  outline: none;
+  color: #212121;
+  /* box-shadow: inset 2px 5px 10px rgb(5, 5, 5); */
+}
+.field-rgb{
+  gap: 0.5em;
+  border-radius: 15px;
+  padding: 0.6em;
+  border: none;
+  outline: none;
+  color: #212121;
+  height: fit-content;
+  width: fit-content;
+  background-color: #fff;
+}
+.field-main-rgb{
+  display: flex;
+  gap: 50px;
+}
+.rgb-text{
+  font-size: 20px;
+}
+.input-field {
+  height: 40px;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  width: 100%;
+  color: #212121;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .title{
+    font-size: 40px;
   }
-  to {
-    transform: rotate(360deg);
+  .generator{
+    margin-top: 10px;
+    width: 300px;
+    height: fit-content;
+    padding: 33px;
+    border-radius: 30px;
+  }
+  .display{
+    width: 100%;
+    height: 250px;
   }
 }
+@media only screen and (min-width: 300px) and (max-width: 400px) {
+  .title{
+    font-size: 30px;
+  }
+  .generator{
+    margin-top: 10px;
+    width: 250px;
+    height: fit-content;
+    padding: 30px;
+    border-radius: 25px;
+  }
+  .display{
+    width: 100%;
+    height: 250px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px ) and (max-width:1000px) {
+  .generator{
+    margin-top: 10px;
+    width: 640px;
+    height: fit-content;
+    padding: 33px;
+    border-radius: 30px;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+/* @media only screen and (min-width: 768px) {...} */
+
+/* Large devices (laptops/desktops, 992px and up) */
+/* @media only screen and (min-width: 992px) {...} */
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* @media only screen and (min-width: 1200px) {...} */
