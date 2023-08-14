@@ -4,8 +4,8 @@ import { useState } from 'react';
 function App() {
   const [gradient, setgradient] = useState("linear-gradient")
   const [colorPicker, setcolorPicker] = useState({
-    color1:'#ffffff',
-    color2:'#ffffff',
+    color1: '#ffffff',
+    color2: '#ffffff',
   })
   const [hexToRgbState, sethexToRgbState] = useState({
     rgb1: hexToRgb(colorPicker.color1),
@@ -33,30 +33,30 @@ function App() {
           <div className='generatingValue'>
             <div className="field">
               <label htmlFor='gradient-type'>Gradient Type</label>
-              <select className="input-field" name="gradient-type" id="gradient-type" value={gradient} onChange={e=>setgradient(e.target.value)}>
+              <select className="input-field" name="gradient-type" id="gradient-type" value={gradient} onChange={e => setgradient(e.target.value)}>
                 <option value="linear-gradient">Linear</option>
                 <option value="radial-gradient">Radial</option>
               </select>
             </div>
             <div className="field">
               <label htmlFor='color-in-hex'>Color (in hex)</label>
-              <input placeholder="Hex Code" name='color-in-hex' className="input-field" value={colorPicker.color1} onChange={(e) => setcolorPicker({...colorPicker,color1: e.target.value })} type="text" />
+              <input placeholder="Hex Code" name='color-in-hex' className="input-field" value={colorPicker.color1} onChange={(e) => setcolorPicker({ ...colorPicker, color1: e.target.value })} type="text" />
             </div>
             <div className="field">
               <label htmlFor='color-in-hex'>Color (in hex)</label>
-              <input placeholder="Hex Code" name='color-in-hex' className="input-field" value={colorPicker.color2} onChange={(e) => setcolorPicker({...colorPicker,color2:e.target.value })} type="text" />
+              <input placeholder="Hex Code" name='color-in-hex' className="input-field" value={colorPicker.color2} onChange={(e) => setcolorPicker({ ...colorPicker, color2: e.target.value })} type="text" />
             </div>
-            
+
             <div className="field">
               <label htmlFor='color-picker'>Pick your 1 color</label>
               <input placeholder="color picker" name='color-picker' value={colorPicker.color1} onChange={(e) => {
-                setcolorPicker({...colorPicker,color1: e.target.value })
-                sethexToRgbState({...hexToRgbState,rgb1:hexToRgb(colorPicker.color1)})
+                setcolorPicker({ ...colorPicker, color1: e.target.value })
+                sethexToRgbState({ ...hexToRgbState, rgb1: hexToRgb(colorPicker.color1) })
               }} className="input-field" type="color" />
 
             </div>
             <div className="field">
-              <div className='field-main-rgb' style={{gap:'20px'}}>
+              <div className='field-main-rgb' style={{ gap: '20px' }}>
                 <div className='field rgb-text'>Red</div>
                 <div className='field rgb-text'>Green</div>
                 <div className='field rgb-text'>Blue</div>
@@ -71,14 +71,14 @@ function App() {
             <div className="field">
               <label htmlFor='color-picker2'>Pick your 2 color</label>
               <input placeholder="color picker" name='color-picker2' value={colorPicker.color2} onChange={(e) => {
-                setcolorPicker({...colorPicker,color2: e.target.value })
-                sethexToRgbState({...hexToRgbState,rgb2:hexToRgb(colorPicker.color1)})
+                setcolorPicker({ ...colorPicker, color2: e.target.value })
+                sethexToRgbState({ ...hexToRgbState, rgb2: hexToRgb(colorPicker.color1) })
               }} className="input-field" type="color" />
 
             </div>
-            
+
             <div className="field">
-              <div className='field-main-rgb' style={{gap:'20px'}}>
+              <div className='field-main-rgb' style={{ gap: '20px' }}>
                 <div className='field rgb-text'>Red</div>
                 <div className='field rgb-text'>Green</div>
                 <div className='field rgb-text'>Blue</div>
@@ -91,8 +91,22 @@ function App() {
 
             </div>
           </div>
-          <div className='display' style={{
-            backgroundImage: `${gradient}(${colorPicker.color1},${colorPicker.color2})`}}></div>
+
+          <div className='display-div'>
+            <div className='display' style={{
+              backgroundImage: `${gradient}(${colorPicker.color1},${colorPicker.color2})`
+            }}></div>
+            <div className='code'>
+              <code>
+
+                {
+                  `background-image: ${gradient}(${colorPicker.color1},${colorPicker.color2})`
+                }
+              </code>
+
+            </div>
+          </div>
+
         </div>
       </div>
 
